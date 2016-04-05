@@ -1,0 +1,100 @@
+body {
+  background-color: #eeeeee;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../fonts/helveticaneue-thin-webfont.eot');
+  src: url('../fonts/helveticaneue-thin-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/helveticaneue-thin-webfont.woff2') format('woff2'),
+       url('../fonts/helveticaneue-thin-webfont.woff') format('woff'),
+       url('../fonts/helveticaneue-thin-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../fonts/helveticaneue-heavy-webfont.eot');
+  src: url('../fonts/helveticaneue-heavy-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/helveticaneue-heavy-webfont.woff2') format('woff2'),
+       url('../fonts/helveticaneue-heavy-webfont.woff') format('woff'),
+       url('../fonts/helveticaneue-heavy-webfont.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+.container {
+	margin: 20% auto;
+	display: block;
+	text-align: center;
+  font-family: "Helvetica Neue", Arial, Tahoma;
+}
+
+/*TIMER*/
+.time {
+  font-size: 40px;
+  color: white;
+  background: green;
+}
+
+.mlSeconds {
+  margin-bottom: 20px;
+  padding-left: 150px;
+  font-size: 16px;
+  color: white;
+  background: green;
+}
+
+.time:hover,
+.mlSeconds:hover {
+  color: orange;
+  font-weight: bold;
+  background: black;
+  border-radius: 20px;
+}
+
+/*BUTTON*/
+.start {
+	width: 20%;
+	height: 40px;
+	margin-right: 40px;
+	font-size: 20px;
+  border-radius: 10px;
+}
+
+.pause,
+.cont {
+	width: 20%;
+	height: 40px;
+	margin-right: 40px;
+	font-size: 20px;
+  border-radius: 10px;
+  display: none;
+}
+
+.start:hover,
+.cont:hover {
+  cursor: pointer;
+  background: green;
+  color: white;
+}
+
+.pause:hover {
+  cursor: pointer;
+  background: orange;
+  color: white;
+}
+
+.clear {
+	width: 20%;
+	height: 40px;
+	font-size: 20px;
+  border-radius: 10px;
+}
+
+.clear:hover {
+  cursor: pointer;
+  background: red;
+  color: white;
+}
