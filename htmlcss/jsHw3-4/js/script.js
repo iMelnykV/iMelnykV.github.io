@@ -1,15 +1,12 @@
 var objTest = {
-  createContainer: function (parentElem) {
-  	var container = document.createElement('div');
-  	container.className = 'container';
-  	parentElem.appendChild(container);
-  },
-  createTopic: function (container, titleName) {
-    var topic = document.createElement('h1');
-  	topic.innerHTML = 'Тест по программированию';
+  createContainer: function () {
+    var container = document.createElement('div');
+    container.className = 'container';
+    document.body.appendChild(container);
 
-  	var container = document.querySelector('.container');
-  	container.appendChild(topic);
+    var topic = document.createElement('h1');
+    topic.innerHTML = 'Тест по программированию';
+    container.appendChild(topic);
   },
   questions: [
     {
@@ -69,46 +66,38 @@ var objTest = {
       var textQuestion = document.createElement('p');
       textQuestion.innerHTML = this.questions[i].title;
 
-      var container = document.querySelector('.container');
+      container = document.querySelector('.container');
       container.appendChild(textQuestion);
 
-      var elemList = document.createElement('li');
-      var container = document.querySelector('.container');
-      container.appendChild(elemList);
+      textAnswer1 = document.createElement('label');
+      textAnswer1.innerHTML = '<input type="checkbox" value="">' + this.questions[i].answers[0].text;
+      container.appendChild(textAnswer1);
 
-      var textAnswer = document.createElement('label');
-      textAnswer.innerHTML = '<input type="checkbox" value="">' + this.questions[i].answers[0].text;
-      container.appendChild(textAnswer);
+      elemList1 = document.createElement('li');
+      container.appendChild(elemList1);
 
-      var elemList = document.createElement('li');
-      var container = document.querySelector('.container');
-      container.appendChild(elemList);
+      textAnswer2 = document.createElement('label');
+      textAnswer2.innerHTML = '<input type="checkbox" value="">' + this.questions[i].answers[1].text;
+      container.appendChild(textAnswer2);
 
-      var textAnswer = document.createElement('label');
-      textAnswer.innerHTML = '<input type="checkbox" value="">' + this.questions[i].answers[1].text;
-      container.appendChild(textAnswer);
+      elemList2 = document.createElement('li');
+      container.appendChild(elemList2);
 
-      var elemList = document.createElement('li');
-      var container = document.querySelector('.container');
-      container.appendChild(elemList);
-
-      var textAnswer = document.createElement('label');
-      textAnswer.innerHTML = '<input type="checkbox" value="">' + this.questions[i].answers[2].text;
-      container.appendChild(textAnswer);
+      textAnswer3 = document.createElement('label');
+      textAnswer3.innerHTML = '<input type="checkbox" value="">' + this.questions[i].answers[2].text;
+      container.appendChild(textAnswer3);
     }
   },
-  createButton: function (container, buttonName) {
+  createButton: function () {
     var result = document.createElement('BUTTON');
-    result.className	= 'result_button';
+    result.className = 'result_button';
     result.innerHTML = 'Проверить мои результаты';
 
-    var container = document.querySelector('.container');
     container.appendChild(result);
   }
 }
 
 var element = document.body;
 objTest.createContainer(element);
-objTest.createTopic();
 objTest.createQuestions();
 objTest.createButton();
