@@ -1,103 +1,90 @@
-var start = document.querySelector('.start');
-var pause = document.querySelector('.pause');
-var cont = document.querySelector('.cont');
-var clear = document.querySelector('.clear');
-var h = 0;
-var m = 0;
-var s = 0;
-var ml = 0;
-
-function lpad(n, z, width) {
-  z = z || '0';
-  n = n + '';
-  return n.length >= width ? n : new Array(width - n.length + 1).join( z ) + n;
+function addEvent(element, event, handler) {
+	if (window.attachEvent) {
+    element.attachEvent('on'+event,handler);
+	} else {
+		element.addEventListener(event,handler);
+	}
 }
 
-var time = document.querySelector('.time');
-time.innerHTML = lpad(h, '0', 2) + ':' + lpad(m, '0', 2) + ':' + lpad(s, '0', 2);
+var Button1 = document.getElementById('3');
+var Button2 = document.getElementById('4');
 
-var mlSeconds = document.querySelector('.mlSeconds');
-mlSeconds.innerHTML = '0';
+function ChangeButtonState() {
+  var statesText = ['START', 'PAUSE'];
 
-var mlSecondsID;
-var sId;
-var mId;
-var hId;
-
-function startPause() {
-  start.style.display = 'none';
-  pause.style.display = 'inline-block';
+	if (_time.isActive) {
+		_time.save_time += _time.delta_time();
+    _time.Start_time = 0;
+	} else {
+		_time.Start_time = Date.now();
+	}
+	_time.isActive =! _time.isActive;
+	Button1.innerHTML = statesText[_time.isActive + 0];
 }
 
-function mlSecStart() {
-  mlSecondsID = setInterval(
-    function () {
-      ml = (ml + 1) % 1000;
-      mlSeconds.innerHTML = ml;
-    }, 1);
-
-  sId = setInterval(
-    function () {
-      s = (s + 1) % 60;
-      time.innerHTML = lpad(h, '0', 2) + ':' + lpad(m, '0', 2) + ':' + lpad(s, '0', 2);
-    }, 1000);
-
-  mId = setInterval(
-    function () {
-      m = (m + 1) % 60;
-      time.innerHTML = lpad(h, '0', 2) + ':' + lpad(m, '0', 2) + ':' + lpad(s, '0', 2);
-    }, 60000);
-
-  hId = setInterval(
-    function () {
-      h = (h + 1) % 24;
-      time.innerHTML = lpad(h, '0', 2) + ':' + lpad(m, '0', 2) + ':' + lpad(s, '0', 2);
-    }, 3600000);
+function resetTimer() {
+	var my_timer = document.querySelector('.Clock');
+	my_timer.innerHTML = '00:00:00:000';
+	_time.isActive = false;
+	_time.Start_time = 0;
+	_time.End_time = 0;
+	_time.save_time = 0;
 }
 
-function timePause() {
-  clearInterval(mlSecondsID);
-  clearInterval(sId);
-  clearInterval(mId);
-  clearInterval(hId);
-  time.innerHTML = lpad(h, '0', 2) + ':' + lpad(m, '0', 2) + ':' + lpad(s, '0', 2);
-  mlSeconds.innerHTML = ml;
+var _time = {
+	Start_time: 0,
+	End_time: 0,
+	isActive: false,
+	timerID: undefined,
+	minTime: 6,
+	addition_time: 0,
+	save_time: 0,
+	delta_time: function() {
+    return Date.now() - this.Start_time;
+	}
+};
+
+function Counter() {
+  if (_time.isActive) {
+    _time.timerID=setInterval(startTimer,_time.minTime);
+	} else if (_time.timerID !== undefined) {
+    clearInterval(_time.timerID);
+  }
 }
 
-function pauseCont() {
-  pause.style.display = 'none';
-  cont.style.display = 'inline-block';
-}
+function startTimer() {
+  if(_time.isActive) {
+    var my_timer = document.querySelector('.Clock');
+	  var time = my_timer.innerHTML;
+	  var arr = time.split(":");
+	  var h = arr[0];
+	  var m = arr[1];
+	  var s = arr[2];
+	  var ms = arr[3];
+	  _time.addition_time = _time.delta_time() + _time.save_time;
 
-function contPause() {
-  cont.style.display = 'none';
-  pause.style.display = 'inline-block';
-}
+		if (_time.addition_time >= 3600000) {
+      h = '' + Math.floor(_time.addition_time / 3600000);
+			_time.addition_time = _time.addition_time % 3600000;
+		}
+		if (_time.addition_time >= 60000) {
+			m = '' + Math.floor(_time.addition_time / 60000);
+			_time.addition_time = _time.addition_time % 60000;
+		}
+		if (_time.addition_time >= 1000) {
+			s = '' + Math.floor(_time.addition_time / 1000);
+			_time.addition_time = _time.addition_time % 1000;
+		}
+		if (_time.addition_time < 1000) {
+			ms = '' + _time.addition_time;
+		}
+    if (s.length < 2 ) s = "0" + s;
+	  if (m.length < 2) m = "0" + m;
+	  if (h.length < 2) h = "0" + h;
 
-function contStart() {
-  cont.style.display = 'none';
-  pause.style.display = 'none';
-  start.style.display = 'inline-block';
+    document.getElementById("q").innerHTML = h + ":" + m + ":" + s + ":" + ms;
+	}
 }
-
-function clearTime() {
-  clearInterval(mlSecondsID);
-  clearInterval(sId);
-  clearInterval(mId);
-  clearInterval(hId);
-  ml = 0;
-  s = 0;
-  m = 0;
-  h = 0;
-  time.innerHTML = lpad(h, '0', 2) + ':' + lpad(m, '0', 2) + ':' + lpad(s, '0', 2);
-  mlSeconds.innerHTML = ml;
-}
-
-start.addEventListener("click", mlSecStart);
-start.addEventListener("click", startPause);
-pause.addEventListener("click", timePause);
-pause.addEventListener("click", pauseCont);
-cont.addEventListener("click", mlSecStart);
-cont.addEventListener("click", contPause);
-clear.addEventListener("click", clearTime);
-clear.addEventListener("click", contStart);
+addEvent(Button1, "click", ChangeButtonState);
+addEvent(Button1, "click", Counter);
+addEvent(Button2, "click", resetTimer);

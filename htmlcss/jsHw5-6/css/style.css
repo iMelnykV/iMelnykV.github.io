@@ -32,69 +32,35 @@ body {
 }
 
 /*TIMER*/
-.time {
+.Clock {
   font-size: 40px;
-  color: white;
-  background: green;
-}
-
-.mlSeconds {
-  margin-bottom: 20px;
-  padding-left: 150px;
-  font-size: 16px;
-  color: white;
-  background: green;
-}
-
-.time:hover,
-.mlSeconds:hover {
   color: orange;
-  font-weight: bold;
-  background: black;
-  border-radius: 20px;
+  position: absolute;
 }
 
 /*BUTTON*/
-.start {
+.timerButton {
 	width: 20%;
-	height: 40px;
-	margin-right: 40px;
+	height: 30px;
+  margin-top: 60px;
+	margin-left: 670px;
+  padding-top: 10px;
 	font-size: 20px;
   border-radius: 10px;
+  float: left;
+  background: grey;
 }
 
-.pause,
-.cont {
-	width: 20%;
-	height: 40px;
-	margin-right: 40px;
-	font-size: 20px;
-  border-radius: 10px;
-  display: none;
-}
-
-.start:hover,
-.cont:hover {
+.timerButton:hover {
   cursor: pointer;
   background: green;
   color: white;
 }
 
-.pause:hover {
-  cursor: pointer;
-  background: orange;
-  color: white;
+.otherBtn {
+  margin-left: 40px;
 }
 
-.clear {
-	width: 20%;
-	height: 40px;
-	font-size: 20px;
-  border-radius: 10px;
-}
-
-.clear:hover {
-  cursor: pointer;
+.otherBtn:hover {
   background: red;
-  color: white;
 }
