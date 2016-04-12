@@ -48,7 +48,7 @@ h1 {
 }
 
 /* SIDEBAR */
-p {
+.question-text {
   font-size: 16px;
   margin-top: 30px;
   margin-bottom: 15px;
@@ -56,9 +56,8 @@ p {
   font-weight: bold;
 }
 
-li {
+.answer-text {
   margin-top: 10px;
-  list-style: none;
 }
 
 label {
@@ -73,13 +72,13 @@ label {
   margin-top: 60px;
 	margin-left: 350px;
   font-size: 20px;
-  color: #4299d2;
-	background: #ffffff;
+  color: #ffffff;
+	background: #4299d2;
 	border-radius: 5px;
 }
 
 .result_button:hover {
   cursor: pointer;
   color: #ffffff;
-	background: #4299d2;
+	background: green;
 }

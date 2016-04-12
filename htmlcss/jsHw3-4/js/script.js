@@ -1,27 +1,18 @@
 var objTest = {
-  createContainer: function () {
-    var container = document.createElement('div');
-    container.className = 'container';
-    document.body.appendChild(container);
-
-    var topic = document.createElement('h1');
-    topic.innerHTML = 'Тест по программированию';
-    container.appendChild(topic);
-  },
   questions: [
     {
       title: '1. Вопрос №1',
       answers: [
         {
-          text: 'Вариант ответа №1',
+          text: '<label><input type = "checkbox">Вариант ответа №1</input></label>',
           correct: true
         },
         {
-          text: 'Вариант ответа №2',
+          text: '<label><input type = "checkbox">Вариант ответа №2</input></label>',
           correct: false
         },
         {
-          text: 'Вариант ответа №3',
+          text: '<label><input type = "checkbox">Вариант ответа №3</input></label>',
           correct: false
         }
       ]
@@ -30,15 +21,15 @@ var objTest = {
       title: '2. Вопрос №2',
       answers: [
         {
-          text: 'Вариант ответа №1',
+          text: '<label><input type = "checkbox">Вариант ответа №1</input></label>',
           correct: false
         },
         {
-          text: 'Вариант ответа №2',
+          text: '<label><input type = "checkbox">Вариант ответа №2</input></label>',
           correct: false
         },
         {
-          text: 'Вариант ответа №3',
+          text: '<label><input type = "checkbox">Вариант ответа №3</input></label>',
           correct: true
         }
       ]
@@ -47,57 +38,49 @@ var objTest = {
       title: '3. Вопрос №3',
       answers: [
         {
-          text: 'Вариант ответа №1',
+          text: '<label><input type = "checkbox">Вариант ответа №1</input></label>',
           correct: false
         },
         {
-          text: 'Вариант ответа №2',
+          text: '<label><input type = "checkbox">Вариант ответа №2</input></label>',
           correct: true
         },
         {
-          text: 'Вариант ответа №3',
+          text: '<label><input type = "checkbox">Вариант ответа №3</input></label>',
           correct: false
         }
       ]
     }
   ],
-  createQuestions: function () {
+  generateElement: function () {
+    var elDiv = document.createElement('form');
+    elDiv.classList.add('container');
+    document.body.appendChild(elDiv);
+
+    var topic = document.createElement('h1');
+    topic.innerHTML = 'Тест по программированию';
+    elDiv.appendChild(topic);
+
     for (var i = 0; i < this.questions.length; i++) {
-      var textQuestion = document.createElement('p');
-      textQuestion.innerHTML = this.questions[i].title;
+      var question = document.createElement('p');
+      question.classList.add('question-text');
+      question.innerHTML = this.questions[i].title;
 
-      container = document.querySelector('.container');
-      container.appendChild(textQuestion);
+      var form = document.querySelector('form');
+      form.appendChild(question);
 
-      textAnswer1 = document.createElement('label');
-      textAnswer1.innerHTML = '<input type="checkbox" value="">' + this.questions[i].answers[0].text;
-      container.appendChild(textAnswer1);
-
-      elemList1 = document.createElement('li');
-      container.appendChild(elemList1);
-
-      textAnswer2 = document.createElement('label');
-      textAnswer2.innerHTML = '<input type="checkbox" value="">' + this.questions[i].answers[1].text;
-      container.appendChild(textAnswer2);
-
-      elemList2 = document.createElement('li');
-      container.appendChild(elemList2);
-
-      textAnswer3 = document.createElement('label');
-      textAnswer3.innerHTML = '<input type="checkbox" value="">' + this.questions[i].answers[2].text;
-      container.appendChild(textAnswer3);
+      for (var y = 0; y < this.questions[i].answers.length; y++) {
+        var answer = document.createElement('p');
+        answer.classList.add('answer-text');
+        answer.innerHTML = this.questions[i].answers[y].text;
+        form.appendChild(answer);
+      }
     }
-  },
-  createButton: function () {
     var result = document.createElement('BUTTON');
     result.className = 'result_button';
     result.innerHTML = 'Проверить мои результаты';
-
-    container.appendChild(result);
+    form.appendChild(result);
   }
 }
 
-var element = document.body;
-objTest.createContainer(element);
-objTest.createQuestions();
-objTest.createButton();
+objTest.generateElement();
