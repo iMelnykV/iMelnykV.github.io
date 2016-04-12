@@ -1,0 +1,124 @@
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../fonts/helveticaneue-thin-webfont.eot');
+  src: url('../fonts/helveticaneue-thin-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/helveticaneue-thin-webfont.woff2') format('woff2'),
+       url('../fonts/helveticaneue-thin-webfont.woff') format('woff'),
+       url('../fonts/helveticaneue-thin-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../fonts/helveticaneue-heavy-webfont.eot');
+  src: url('../fonts/helveticaneue-heavy-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/helveticaneue-heavy-webfont.woff2') format('woff2'),
+       url('../fonts/helveticaneue-heavy-webfont.woff') format('woff'),
+       url('../fonts/helveticaneue-heavy-webfont.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/*TABS*/
+.tabs {
+  margin: 10px;
+	padding: 5px;
+	border: 1px solid grey;
+	border-radius: 5px;
+	width: 40%;
+	margin-bottom: 10%;
+}
+
+.tabs_name {
+	height: 50px;
+	width: 100%;
+	border-radius: 5px;
+	background: linear-gradient(to top, #929292, #cecece);
+}
+
+.tabs ul {
+	list-style: none;
+}
+
+.tabs ul li {
+	font-family: "Helvetica Neue", Arial, Tahoma;
+	float: left;
+	padding: 0 10px;
+	margin: 11px 0px 0px 5px;
+	background-color: #C4C1C1;
+	border-radius: 5px 5px 0px 0px;
+	line-height: 38px;
+	border: 1px solid #a3a1a1;
+	border-bottom: none;
+}
+
+.tabs ul li:hover {
+  background-color: orange;
+	border: 1px solid grey;
+  border-bottom: none;
+	cursor: pointer;
+}
+
+#activeP,
+#activeT,
+#active {
+	background-color: white;
+	display: block;
+}
+
+.tabs_inner {
+	clear: both;
+	width: 95%;
+	padding-left: 5px;
+  font-family: Arial, Tahoma;
+	font-size: 14px;
+	padding: 10px;
+}
+
+.first,
+.second,
+.third {
+  display: none;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+/*TOOLTIP*/
+form {
+  border: 1px solid grey;
+  width: 40%;
+  margin-left: 10px;
+  padding: 10px;
+}
+
+label {
+  display: inline-block; width: 5em;
+}
+
+fieldset div {
+  margin-bottom: 2em;
+}
+
+fieldset .help {
+  display: inline-block;
+  position: relative;
+}
+
+.ui-tooltip {
+  width: 210px;
+  position: absolute;
+  margin-right: 200px;
+}
+
+button {
+  width: 15%;
+	height: 30px;
+	font-size: 14px;
+}
+
+button:hover {
+  cursor: pointer;
+}
