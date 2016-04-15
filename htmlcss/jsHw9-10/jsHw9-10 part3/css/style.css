@@ -1,0 +1,155 @@
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../fonts/helveticaneue-thin-webfont.eot');
+  src: url('../fonts/helveticaneue-thin-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/helveticaneue-thin-webfont.woff2') format('woff2'),
+       url('../fonts/helveticaneue-thin-webfont.woff') format('woff'),
+       url('../fonts/helveticaneue-thin-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../fonts/helveticaneue-heavy-webfont.eot');
+  src: url('../fonts/helveticaneue-heavy-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/helveticaneue-heavy-webfont.woff2') format('woff2'),
+       url('../fonts/helveticaneue-heavy-webfont.woff') format('woff'),
+       url('../fonts/helveticaneue-heavy-webfont.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  background-color: rgb(50,50,50);
+  font-family: sans-serif, Arial;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+#wrapper {
+  width: 100%;
+  min-width: 1000px;
+  margin: 0 auto;
+}
+
+/* HEADER
+-------------------------------------------------------------- */
+header {
+	padding: 30px 0;
+}
+
+#title {
+	width: 100%;
+	text-align: center;
+}
+
+#title h1 {
+	color: #fff;
+	font-size: 30px;
+	margin-bottom: 10px;
+}
+
+/* NAV
+-------------------------------------------------------------- */
+.content {
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	content: "";
+	clear: both;
+	height: 0;
+}
+
+nav {
+  background-color: olive;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  position: relative;
+}
+
+/* SUB-MENU
+-------------------------------------------------------------- */
+nav li ul {
+  background-color: maroon;
+  position: absolute;
+  left: 0;
+  top: 40px;
+  width: 200px;
+}
+
+nav li li {
+  position: relative;
+  margin: 0;
+  display: block;
+}
+
+nav li li ul {
+  position: absolute;
+  top: 0;
+  left: 200px;
+  margin: 0;
+}
+
+/* style all links */
+nav a {
+  line-height: 40px;
+  padding: 0 12px;
+  margin: 0 12px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+nav a:hover,
+nav a:focus,
+nav a:active {
+  color: rgb(50,50,50);
+}
+
+/* style sub level links */
+nav li li a {
+  border-bottom: solid 1px rgb(200,50,50);
+  margin: 0 10px;
+  padding: 0;
+}
+
+nav li li:last-child a {
+  border-bottom: none;
+}
+
+/* hide sub-menu links */
+ul.sub-menu {
+  display: none;
+}
+
+/* show arrows for dropdowns */
+nav li.dropdown > a {
+  background-image: url('../img/arrow-down.png');
+  background-position: right 20px;
+  background-repeat: no-repeat;
+}
+
+nav li li.dropdown > a {
+  background-image: url('../img/arrow-right.png');
+  background-position: right 16px;
+  background-repeat: no-repeat;
+}

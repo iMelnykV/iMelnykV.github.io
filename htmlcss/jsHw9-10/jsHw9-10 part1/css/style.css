@@ -1,0 +1,53 @@
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../fonts/helveticaneue-thin-webfont.eot');
+  src: url('../fonts/helveticaneue-thin-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/helveticaneue-thin-webfont.woff2') format('woff2'),
+       url('../fonts/helveticaneue-thin-webfont.woff') format('woff'),
+       url('../fonts/helveticaneue-thin-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../fonts/helveticaneue-heavy-webfont.eot');
+  src: url('../fonts/helveticaneue-heavy-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/helveticaneue-heavy-webfont.woff2') format('woff2'),
+       url('../fonts/helveticaneue-heavy-webfont.woff') format('woff'),
+       url('../fonts/helveticaneue-heavy-webfont.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+input[type=checkbox] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+label {
+  cursor: pointer;
+}
+
+label:after {
+  content: " ";
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  background: url(img/checkbox-2.png);
+  position: relative;
+  top: 3px;
+  margin-left: 15px;
+}
+
+input[type=checkbox]:checked + label:after {
+  background-position: 0 -17px;
+}
+
+label:hover:after {
+  background-position: 0 -34px;
+}
+
+input[type=checkbox]:checked + label:hover:after {
+  background-position: 0 -51px;
+}

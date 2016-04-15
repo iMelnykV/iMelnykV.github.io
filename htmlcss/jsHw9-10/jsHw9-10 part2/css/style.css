@@ -1,0 +1,104 @@
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../fonts/helveticaneue-thin-webfont.eot');
+  src: url('../fonts/helveticaneue-thin-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/helveticaneue-thin-webfont.woff2') format('woff2'),
+       url('../fonts/helveticaneue-thin-webfont.woff') format('woff'),
+       url('../fonts/helveticaneue-thin-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../fonts/helveticaneue-heavy-webfont.eot');
+  src: url('../fonts/helveticaneue-heavy-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/helveticaneue-heavy-webfont.woff2') format('woff2'),
+       url('../fonts/helveticaneue-heavy-webfont.woff') format('woff'),
+       url('../fonts/helveticaneue-heavy-webfont.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+header {
+  margin-top: 20px;
+  text-align: center;
+  font-family: "Helvetica Neue", Arial, Tahoma;
+  font-size: 20px;
+}
+
+main {
+  margin-top: 40px;
+  padding: 0 50px;
+  font-family: Arial, Tahoma;
+  font-size: 14px;
+}
+
+p {
+  font-size: 16px;
+}
+
+form {
+  margin-bottom: 40px;
+  padding: 10px;
+  background: #99CCFF;
+}
+
+div {
+  margin-bottom: 10px;
+}
+
+/*ЧЕКБОКС С ПОМОЩЬЮ jQuery*/
+.niceCheck {
+  width: 17px;
+  height: 17px;
+  display: inline-block;
+  cursor: pointer;
+  background: url(../img/checkbox.png);
+  overflow: hidden;
+}
+
+.niceChecked {
+	background-position: 0 -17px;
+}
+
+.niceCheck input {
+	margin-left: -100px;
+}
+
+.niceCheckDisabled {
+	background-image: url(../img/checkbox-disabled.png);
+}
+
+/*ЧЕКБОКС С ПОМОЩЬЮ CSS*/
+.goodCheck[type=checkbox] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+.otherLab {
+  cursor: pointer;
+}
+
+.otherLab:after {
+  content: " ";
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  background: url(../img/checkbox-2.png);
+  position: relative;
+  top: 3px;
+  margin-left: 5px;
+}
+
+.goodCheck[type=checkbox]:checked + .otherLab:after {
+  background-position: 0 -17px;
+}
+
+.otherLab:hover:after {
+  background-position: 0 -34px;
+}
+
+.goodCheck[type=checkbox]:checked + .otherLab:hover:after {
+  background-position: 0 -51px;
+}

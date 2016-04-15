@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jsHw9-10</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="http://www.xiper.net/js/jquery.js"></script>
+    <script src="js/jquery.checkbox.js"></script>
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+
+    <header>
+      <h1>Нестандартные чекбоксы двумя способами:</h1>
+    </header>
+
+    <main>
+      <p>Чекбокс с помощью jQuery:</p>
+      <form action="#">
+        <div>
+          <label for="ch1">label 1</label>
+          <input type="checkbox" class="niceCheck" id="ch1" tabindex="1"/>
+        </div>
+        <div>
+          <label for="ch2">label 2</label>
+          <input type="checkbox" class="niceCheck" checked="checked" id="ch2" tabindex="2" value="2"/>
+        </div>
+        <div>
+          <label for="ch3">label 3</label>
+          <input type="checkbox" class="niceCheck" id="ch3" checked="checked" disabled="disabled"/>
+        </div>
+      </form>
+
+      <p>Чекбокс с помощью css:</p>
+      <form action="#">
+        <div>
+          <input class="goodCheck" type="checkbox" id="test-check1"/>
+          <label class="otherLab" for="test-check1">Чекбокс 1:</label>
+        </div>
+        <div>
+          <input class="goodCheck" type="checkbox" id="test-check2"/>
+          <label class="otherLab" for="test-check2">Чекбокс 2:</label>
+        </div>
+        <div>
+          <input class="goodCheck" type="checkbox" id="test-check3"/>
+          <label class="otherLab" for="test-check3">Чекбокс 3:</label>
+        </div>
+      </form>
+    </main>
+
+  </body>
+</html>
