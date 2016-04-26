@@ -1,0 +1,114 @@
+body {
+  background-color: rgb(50,50,50);
+  font-family: sans-serif, Arial;
+  font-size: 16px;
+}
+
+/*1-е задание карусель
+-----------------------------------------------*/
+.carousel {
+	display: block;
+	height: 150px;
+}
+
+.carousel-hider {
+  width: 600px;
+  margin-top: 50px;
+  overflow: hidden;
+  float: left;
+}
+
+.carousel-element {
+  display: block;
+  margin-right: 25px;
+  float: left;
+}
+
+.carousel-arrow-left, .carousel-arrow-right {
+  float: left;
+  display: block;
+  border: 1px solid grey;
+  background-color: lightgrey;
+  padding: 5px;
+  margin-top: 90px;
+}
+
+.carousel-arrow-left:hover, .carousel-arrow-right:hover, button:hover {
+  cursor: pointer;
+  background-color: grey;
+}
+
+.carousel-arrow-left {
+  margin-right: 25px;
+  margin-left: 25px;
+}
+
+.carousel-arrow-right {
+  margin-left: 25px;
+}
+
+.carousel-list {
+  list-style: none;
+  width: 10000px;
+  padding: 0px;
+  position: relative;
+}
+
+.carousel-element img {
+  max-width: 100px;
+  height: 100px;
+}
+
+button {
+	display: block;
+	cursor: pointer;
+	clear: both;
+	margin-top: 50px;
+	border: 1px solid yellow;
+	background-color: lightyellow;
+	padding: 5px;
+	line-height: 25px;
+	font-size: 14px;
+}
+
+.first {
+	display: none;
+}
+
+/*2-е задание с помощью шаблонизатора
+-----------------------------------------------*/
+.profile {
+  background-color: white;
+	font-family: Tahoma;
+	margin: 1% 20% 10% 20%;
+	height: 70%;
+	width: 50%;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  padding: 10px;
+}
+
+h1 {
+  padding-left: 15%;
+	margin-top: 0px;
+  margin-left: 80px;
+}
+
+.photo {
+	margin: 0% 40% 0% 30%;
+	border-radius: 5px;
+  width: 35%;
+}
+
+.profile ul {
+	margin-left: 15%;
+}
+
+.profile p {
+  padding-left: 10%;
+}
+
+.profile hr {
+  text-align: center;
+	color: #9dc4b1;
+	width: 80%;
+}
