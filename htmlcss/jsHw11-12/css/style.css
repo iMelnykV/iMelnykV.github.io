@@ -28,14 +28,13 @@ body {
   float: left;
   display: block;
   border: 1px solid grey;
-  background-color: lightgrey;
   padding: 5px;
   margin-top: 90px;
 }
 
 .carousel-arrow-left:hover, .carousel-arrow-right:hover, button:hover {
   cursor: pointer;
-  background-color: grey;
+  background-color: green;
 }
 
 .carousel-arrow-left {

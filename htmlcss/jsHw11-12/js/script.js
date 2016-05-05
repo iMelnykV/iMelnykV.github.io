@@ -24,7 +24,7 @@ $(function() {
       content: ['Охота', 'Рыбалка', 'Путешествия']
     }
   ];
-  var page = tmpl(task, {
+  page = tmpl(task, {
     data: taskData
   });
 
@@ -41,4 +41,4 @@ $(function() {
     $('.first').css("display", "none");
     $('.profile').remove()
   });
-})
+});
