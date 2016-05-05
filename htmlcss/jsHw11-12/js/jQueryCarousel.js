@@ -8,9 +8,6 @@
 
     var settings = $.extend(defaults, options);
 
-    console.log('defaults', defaults);
-    console.log('options', options);
-
     var leftUIEl = $('.carousel-arrow-left');
     var rightUIEl = $('.carousel-arrow-right');
     var elementsList = $('.carousel-list');
