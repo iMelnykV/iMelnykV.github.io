@@ -1,0 +1,505 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	-moz-padding: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@font-face {
+	font-family: 'league_gothicregular';
+	src: url('../fonts/leaguegothic-regular-webfont.eot?#iefix') format('embedded-opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+header {
+	height: 827px;
+	width: 100%;
+	display: block;
+	background: url(../img/bg7-8.png) no-repeat;
+	background-position: center;
+}
+
+.wrapper {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.logo {
+	float: left;
+	display: inline-block;
+	margin-top: 33px;
+}
+
+.menu {
+	float: left;
+	display: inline-block;
+	margin-left: 58px;
+	margin-top: 55px;
+	margin-bottom: 165px;
+}
+
+.menu li {
+	display: inline-block;
+	margin-right: 35px;
+	margin-left: 5px;
+	float: left;
+	-moz-padding-left:5px;
+	-moz-padding-right: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.menu li:last-child {
+	margin-right: 0;
+}
+
+.menu li:hover {
+	border-bottom: 2px solid #edbfff;
+}
+
+.menu li a {
+	text-decoration: none;
+	color: white;
+	font-size: 24px;
+	font-family: 'league_gothicregular', Arial, sans-serif;
+}
+
+.menu480 {
+	display: none;
+}
+
+.container-colomn-text-fone {
+	height: 400px;
+	width: 100%;
+	background: url(../img/container.png) no-repeat;
+	clear: both;
+	display: inline-block;
+	margin-top: 0px;
+}
+
+.colomn {
+	height: 35px;
+	width: 25px;
+	background: url(../img/colomnsprite.png) -2px -3px no-repeat;
+	float: left;
+	margin-left: -316px;
+	margin-top: 182px;
+}
+
+.text {
+	width: 500px;
+	height: 100%;
+	float: left;
+	margin-right: 115px;
+}
+
+.text h1 {
+	font-size: 60px;
+	color: #fefefe;
+	font-family: 'league_gothicregular', Arial, sans-serif;
+	margin-top: 76px;
+}
+
+.text h2 {
+	font-size: 32px;
+	color: #edbfff;
+	font-family: 'league_gothicregular', Arial, sans-serif;
+	margin-bottom: 5px;
+}
+
+.text p {
+	font-size: 18px;
+	color: #ffffff;
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-weight: lighter;
+	line-height: 24px;
+}
+
+.fone {
+	float: left;
+	margin-top: -17px;
+}
+
+.colomn--right {
+	display: none;
+	height: 35px;
+	width: 25px;
+	background: url(../img/colomnsprite.png) -38px -3px no-repeat;
+	float: right;
+	margin-top: 182px;
+	margin-left: 0px;
+	margin-right: -318px;
+}
+
+.rounds {
+	width: 100px;
+	height: 18px;
+	float: right;
+	display: block;
+	background: url(../img/top-slider.png) no-repeat;
+	margin-top: 74px;
+	margin-right: 160px;
+}
+
+.rounds_item {
+	display: none;
+}
+
+.rounds_item--select {
+	display: none;
+}
+
+.top {
+	height: 340px;
+	width: 100%;
+	background: url(../img/top.png) no-repeat;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	clear: both;
+}
+
+.about {
+	color: white;
+	width: 280px;
+	display: inline-block;
+	float: left;
+	margin-left: 8px;
+	margin-top: 77px;
+}
+
+.icon {
+	height: 30px;
+	width: 30px;
+	background: url(../img/aboutsprite.png) -2px 0 no-repeat;
+	float: left;
+}
+
+.icon--middle {
+	height: 30px;
+	width: 30px;
+	background: url(../img/aboutsprite.png) -40px 4px no-repeat;
+}
+
+.icon--right {
+	height: 30px;
+	width: 30px;
+	background: url(../img/aboutsprite.png) -82px 2px no-repeat;
+}
+
+.about h4 {
+	font-size: 30px;
+	font-family: 'league_gothicregular', Arial, sans-serif;
+	display: inline-block;
+	float: left;
+	margin-left: 24px;
+	margin-bottom: 6px;
+}
+
+.about p {
+	font-size: 16px;
+	font-family: 'Open Sans', Arial, sans-serif;
+	line-height: 24px;
+	clear: both;
+	margin-left: 55px;
+}
+
+.about a {
+	text-decoration: none;
+	color: white;
+	font-size: 18px;
+	font-family: 'league_gothicregular', Arial, sans-serif;
+	float: right;
+	margin-top: 20px;
+	margin-right: 10px;
+}
+
+.about a:hover {
+	text-shadow: 1px 1px 2px white;
+}
+
+.about--middle {
+	display: inline-block;
+	margin-left: 55px;
+}
+
+.middle {
+	height: 509px;
+	width: 100%;
+	background-color: #f9f9f9;
+	-moz-padding-top: 99px;
+	padding-top: 99px;
+}
+
+.autor {
+	height: 295px;
+	width: 427px;
+	background-image: url(../img/blog.png);
+	background-repeat: no-repeat;
+	display: inline-block;
+	float: left;
+	margin-left: 24px;
+}
+
+.autor img {
+	margin: 17px 14px 5px -24px;
+	float: left;
+}
+
+.autor h4 {
+	float: left;
+	font-family: 'league_gothicregular', Arial, sans-serif;
+	font-size: 30px;
+	color: black;
+	margin-top: 30px;
+}
+
+.autor span {
+	color: #edbfff;
+	margin-left: 4px;
+}
+
+.autor p {
+	clear: both;
+	color: black;
+	font-size: 16px;
+	font-family: 'Open Sans', Arial, sans-serif;
+	margin-left: 35px;
+	line-height: 24px;
+}
+
+.blog {
+	height: 295px;
+	width: 433px;
+	display: inline-block;
+	float: left;
+	margin: 28px 0px 0px 57px;
+	margin-bottom: -28px;
+}
+
+.blog h4 {
+	font-size: 30px;
+	font-family: 'league_gothicregular', Arial, sans-serif;
+}
+
+.blog ul li {
+	margin-top: 23px;
+	margin-bottom: 26px;
+}
+
+.blog_text h6 {
+	font-size: 16px;
+	font-family: 'Open Sans', Arial, sans-serif;
+	display: inline-block;
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+
+.blog_text p {
+	font-size: 16px;
+	font-family: 'Open Sans', Arial, sans-serif;
+	line-height: 15px;
+	letter-spacing: -0.5px;
+}
+
+.blog_img {
+	height: 50px;
+	width: 50px;
+	background: url(../img/blogsprite.png) 0 0 no-repeat;
+	margin: -4px 12px 5px 2px;
+	display: inline-block;
+	float: left;
+}
+
+.blog_img--second {
+	background: url(../img/blogsprite.png) 0 -49px no-repeat;
+}
+
+.blog_img--third {
+	background: url(../img/blogsprite.png) 0 -97px no-repeat;
+}
+
+.blog h4 {
+	color: black;
+	font-family: 'league_gothicregular', Arial, sans-serif;
+	font-size: 30px;
+}
+
+.blog a {
+	text-decoration: none;
+	color: black;
+	font-size: 18px;
+	font-family: 'league_gothicregular', Arial, sans-serif;
+	cursor: pointer;
+	float: right;
+	margin-top: 2px;
+	margin-right: 4px;
+}
+
+.rounds--bottom {
+	clear: left;
+	height: 18px;
+	width: 100px;
+	margin-left: 175px;
+	float: none;
+	margin-right: 0px;
+	background: url(../img/middle-slider.png) no-repeat;
+}
+
+.brends {
+	clear: both;
+	width: 100%;
+	text-align: center;
+	height: 122px;
+	border-top: 1px solid #e6e6e6;
+	border-bottom: 1px solid #e6e6e6;
+	margin-top: 90px;
+}
+
+	.brends img {
+	margin-top: 26px;
+}
+
+.bottom {
+	height: 396px;
+	width: 100%;
+	background-color: #ececec;
+}
+
+.bottext {
+	height: 53%;;
+	width: 273px;
+	display: inline-block;
+	overflow: hidden;
+	float: left;
+	margin: 94px 56px 50px 0px;
+}
+
+.bottext h3 {
+	font-size: 48px;
+	font-family: 'league_gothicregular', Arial, sans-serif;
+	color: black;
+	margin-bottom: 14px;
+	letter-spacing: -3px;
+}
+
+.bottext span {
+	font-size: 48px;
+	font-family: 'league_gothicregular', Arial, sans-serif;
+	color: #b9b9b9;
+	line-height: 18px;
+	letter-spacing: -3px;
+}
+
+.bottext h6 {
+	font-size: 16px;
+	font-family: Georgia, Arial, sans-serif;
+	color: #c5c5c5;
+	font-style: italic;
+	margin-bottom: 8px;
+}
+
+.bottext h4 {
+	font-size: 30px;
+	font-family: 'league_gothicregular', Arial, sans-serif;
+	color: black;
+	margin-bottom: 7px;
+}
+
+.bottext p {
+	color: #787878;
+	font-size: 16px;
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-weight: lighter;
+	line-height: 25px;
+}
+
+.bottext--second {
+	margin: 94px 66px 50px 0px;
+}
+
+.bottext--third {
+	margin: 82px 0px 50px 0px;
+}
+
+footer {
+	height: 115px;
+	width: 100%;
+	background-image: url(../img/bgfooter7-8.png);
+}
+
+.container-menu-address {
+	margin: 0 auto;
+	width: 960px;
+	height: 100%;
+}
+
+.menu--foot {
+	float: left;
+	margin-left: -10px;
+	margin-top: 45px;
+}
+
+.menu--foot li a {
+	font-size: 20px;
+}
+
+.menu--foot li {
+	margin-right: 26px;
+}
+
+address {
+	float: left;
+	margin-top: 55px;
+	margin-left: 287px;
+	font-size: 12px;
+	font-family: 'Open Sans', sans-serif;
+	color: #ffffff;
+	font-weight: lighter;
+}
+
+address span {
+	font-weight: bold;
+}
