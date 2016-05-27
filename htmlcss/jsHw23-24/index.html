@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>ToDo List</title>
+		<script data-main="js/app.js" src="js/require.js"></script>
+		<script type="text/javascript" src="js/tamplate.js"></script>
+	</head>
+	<body>
+
+		<script type="text/template" id="wrapper-tamplate">
+			<div class="wrapper">
+				<ul class="item-list"></ul>
+				<div class="controlls">
+					<input type="text" class="item-value">
+					<button class="item-add">Add</button>
+				</div>
+			</div>
+		</script>
+
+		<script type="text/template" id="list-tamplate">
+			<% for(var i = 0; i < data.length; i++) { %>
+				<li><%= data[i] %><span data-value="<%= data[i] %>" class="item-delete">x</span></li>
+			<% }; %>
+		</script>
+
+	</body>
+</html>
