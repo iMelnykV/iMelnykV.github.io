@@ -1,22 +1,18 @@
-var app = require('../js/app.js');
+var app = require('../js/pow.js');
 
-describe("app", function() {
+describe("js", function() {
+  it("call function pow", function() {
+    // prepare
+    a = 4;
+    b = 3;
+    // act
 
-  it("pow(0, 1)", function() {
-  	var result;
-  	result = app.pow(0, 1);
-    expect(result).toBe(0);
-  });
-
-  it("pow(1, 0)", function() {
-     var result;
-     result = app.pow(1, 0);
-     expect(result).toBe(1);
-  });
-
-  it("pow(5, 5)", function() {
-     var result;
-     result = app.pow(5, 5);
-     expect(result).toBe(3125);
+    // assert
+    expect(app.pow(a, b)).toBe(Math.pow(a, b));
+    expect(app.pow(-a, b)).toBe(Math.pow(-a, b));
+    expect(app.pow(a, -b)).toBe(Math.pow(a, -b));
+    expect(app.pow(0, 0)).toBe(0);
+    expect(app.pow(0, b)).toBe(0);
+    expect(app.pow(a, 0)).toBe(1);
   });
 });
