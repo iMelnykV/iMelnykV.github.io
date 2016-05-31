@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: green ;
+}
+
+.wrapper {
+  position: absolute;
+  width: 40%;
+  left: 53%;
+  top: 50px;
+  margin-left: -25%;
+  padding: 25px;
+  border-left: 2px solid grey;
+  border-right: 2px solid grey;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  border-radius: 35px;
+  box-shadow: 0 0 20px 2px rgba(0,0,0,0.8);
+  background-color: blue;
+}
+
+.controlls {
+  margin-top: 30px;
+}
+
+.item-value {
+  display: block;
+  margin: 0 auto;
+  height: 25px;
+  width: 70%;
+  border: 0px;
+  border-radius: 5px;
+  text-align: center;
+  font: 16px Arial;
+  font-style: italic;
+  color: black;
+  background: rgba(235, 235, 234, 1);
+  outline: none;
+}
+
+.item-new-value {
+  display: none;
+}
+
+.editing .item-new-value {
+  display: block;
+  width: 85%;
+  height: 17px;
+  padding: 6px;
+  font: 16px Arial;
+  font-style: italic;
+  color: black;
+  border: 0px;
+  background-color: #ff4e50;
+  outline: none;
+}
+
+.editing .item-label {
+  display: none;
+}
+
+.item-label {
+  float: left;
+  display: inline-table;
+  height: 17px;
+  padding: 6px;
+  font: 16px Arial;
+  font-style: italic;
+  color: black;
+  width: auto;
+  cursor: text;
+  outline: none;
+}
+
+.item-add {
+  display: block;
+  margin: 0 auto;
+  margin-top: 25px;
+  width: 85px;
+  height: 30px;
+  border-radius: 25px;
+  border: 1px solid rgba(34, 85, 130, 1);
+  font: 16px Arial;
+  color: rgba(34, 85, 130, 1);
+  background: rgba(77, 170, 236, 1);
+  cursor: pointer;
+  outline: none;
+}
+
+.item-delete {
+  display: inline-table;
+  float: right;
+  text-align: center;
+  border-left: 2px solid grey;
+  margin-top: 0px;
+  width: 29px;
+  font: 14px Arial;
+  color: black;
+  font-size: 25px;
+  border-radius: 15px;
+  cursor: pointer;
+  background: red;
+}
+
+.todoitem {
+  display: block;
+  list-style-type: none;
+  height: 28px;
+  padding: 10px 15px 10px 15px;
+  text-align: center;
+  margin: 5px;
+  border-bottom: 2px solid grey;
+  border-radius: 55px;
+  box-shadow: 0 16px 30px -6px rgba(0,0,0,0.3);
+  background-color: yellow;
+}
+
+.view label {
+  float: left;
+  display: block;
+  height: 35px;
+}

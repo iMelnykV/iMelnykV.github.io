@@ -1,24 +1,32 @@
 define(
   'view',
-  ['jquery', 'model'],
-  function View(model) {
-    var self = this;
+  ['jquery',
+  'template',
+  'model'],
 
-    function init() {
-      var wrapper = tmpl($('#wrapper-tamplate').html());
-      $('body').append(wrapper);
-      self.elements = {
-        input: $('.item-value'),
-        addBtn: $('.item-add'),
-        listContainer: $('.item-list')
-      };
-      self.renderList(model.data);
-    };
-    self.renderList = function(data) {
-      var list = tmpl($('#list-tamplate').html(), {data: data});
-      self.elements.listContainer.html(list);
-    };
+  function () {
+    return {
+      view: function (model) {
+        var self = this;
 
-    init();
+        function init() {
+          var wrapper = tmpl($('#wrapper-template').html());
+
+          $('body').append(wrapper);
+          self.elements = {
+            input: $('.item-value'),
+            addBtn: $('.item-add'),
+            listContainer: $('.item-list')
+          };
+          self.renderList(model.data);
+        };
+
+        self.renderList = function(data) {
+          var list = tmpl($('#list-template').html(), {data: data});
+          self.elements.listContainer.html(list);
+        };
+        init();
+      }
+    };
   }
 );
