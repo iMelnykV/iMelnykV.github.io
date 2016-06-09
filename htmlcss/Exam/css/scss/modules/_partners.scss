@@ -31,7 +31,7 @@
       border: 4px solid $color-main-light;
       border-radius: 50%;
       background: $color-main-effect;
-      content: '';
+      content: ' ';
     }
   }
 
@@ -51,6 +51,7 @@
 
   &__img {
     border-radius: 50%;
+    overflow: hidden;
   }
 
   &__title {

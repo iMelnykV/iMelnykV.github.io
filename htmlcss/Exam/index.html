@@ -3,32 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name=viewport content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Exam</title>
   <link rel="stylesheet" href="css/scss/vendor/flickity.css" media="screen">
   <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
-  <!-- [if lt IE 9]>
-    <link rel="stylesheet" type="text/css" href=" NOOOOOOO style.ie8.css" />
-  <![endif] -->
+  <script src="js/docready.js"></script>
+  <script src="js/flickity.pkgd.js"></script>
+  <script src="js/isotope2.pkgd.min.js"></script>
   <!--[if IE 8]>
-    <script src="ie8.js"></script>
     <script src="js/respond.min.js"></script>
     <script src="js/html5shiv.min.js"></script>
+    <script src="js/polyfill.js" charset="utf-8"></script>
     <script src="js/selectivizr.min.js"></script>
-    <script type="text/javascript" src="js/PIE_IE678.js"></script>
   <![endif]-->
   <!--[if IE 9]>
+    <script src="ie8.js"></script>
     <script type="text/javascript" src="js/PIE_IE9.js"></script>
   <![endif]-->
-  <script src="js/flickity.pkgd.js"></script>
-  <script src="js/isotope.pkgd.min.js"></script>
-  <script src="js/docready.js"></script>
+  <script src="js/script.js" charset="utf-8"></script>
 </head>
 <body>
   <header class="header">
     <div class="header__wrapper">
       <ul class="autorize">
-        <li class="autorize__item"><a class="autorize__login" href="#">Log in</a></li>
-        <li class="autorize__item"><a class="autorize__signup" href="#">Sign up</a></li>
+        <li class="autorize__item autorize__item--login"><a class="autorize__login" href="#">Log in</a></li>
+        <li class="autorize__item autorize__item--signup"><a class="autorize__signup" href="#">Sign up</a></li>
       </ul>
       <p class="header__logo">URLAUBSGLÜCK</p>
       <h1 class="header__title">Share&nbsp;your holiday&nbsp;dreams</h1>
@@ -141,7 +140,16 @@
 
     <h2 class="content__title--grid">Discover holiday activity ideas</h2>
 
-    <div class="grid"></div>
+    <!-- <div class="grid" data-isotope-options='{"itemSelector": ".grid__item", "layoutMode": "masonry" }'></div> -->
+    <div class="grid">
+      <div class="grid__item" style="position: absolute;"><div class="grid__img"></div></div>
+      <div class="grid__item" style="position: absolute;"><div class="grid__img"></div></div>
+      <div class="grid__item" style="position: absolute;"><div class="grid__img"></div></div>
+      <div class="grid__item" style="position: absolute;"><div class="grid__img"></div></div>
+      <div class="grid__item" style="position: absolute;"><div class="grid__img"></div></div>
+      <div class="grid__item" style="position: absolute;"><div class="grid__img"></div></div>
+      <div class="grid__item" style="position: absolute;"><div class="grid__img"></div></div>
+    </div>
 
     <h2 class="content__title--search">Discover holiday activity ideas</h2>
 
@@ -169,6 +177,5 @@
     </ul>
   </footer>
 
-  <script src="js/script.js" charset="utf-8"></script>
 </body>
 </html>

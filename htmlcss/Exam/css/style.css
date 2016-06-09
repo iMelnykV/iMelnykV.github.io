@@ -79,21 +79,6 @@ textaria {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/*
-body {
-  background: url('../img/refMobile.png') top center no-repeat;
-  opacity: .5;
-
-  @include tablet {
-    background: url('../img/refTablet.png') top center no-repeat;
-    opacity: .5;
-  }
-
-  @include desktop {
-    background: url('../img/refDesktop.png') top center  no-repeat;
-    opacity: .5;
-  }
-}*/
 /*@import '../variables';*/
 .header__logo {
   font-family: "montserrat";
@@ -415,10 +400,12 @@ h2 {
   border: 2px solid #ff4e50;
   border-radius: 19px;
   color: #ff4e50;
+  background: #fff;
   line-height: 36px;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+  behavior: url(border-radius.htc);
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -451,6 +438,7 @@ h2 {
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+  behavior: url(border-radius.htc);
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -612,11 +600,11 @@ h2 {
   width: 92px;
 }
 
-.autorize__item:first-child {
+.autorize__item--login {
   left: 0;
 }
 
-.autorize__item:last-child {
+.autorize__item--signup {
   right: 0;
 }
 
@@ -945,7 +933,7 @@ h2 {
   border: 4px solid #fff;
   border-radius: 50%;
   background: #ff4e50;
-  content: '';
+  content: ' ';
 }
 
 .partner__item {
@@ -968,6 +956,7 @@ h2 {
 
 .partner__img {
   border-radius: 50%;
+  overflow: hidden;
 }
 
 .partner__title {
@@ -1043,6 +1032,7 @@ h2 {
   border: 1px solid #ccc;
   border-radius: 3px;
   outline: none;
+  line-height: 32px;
   /* scss-lint:disable all */
   /* Firefox 19+ */
   /* Firefox 18- */
@@ -1241,6 +1231,12 @@ h2 {
   margin: 0 auto;
 }
 
+.grid::after {
+  display: table;
+  clear: both;
+  content: '';
+}
+
 @media (min-width: 768px) and (max-width: 1023px) {
   .grid {
     width: 768px;
@@ -1254,7 +1250,7 @@ h2 {
 }
 
 .grid__sizer {
-  width: 100%;
+  width: 300px;
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -1276,6 +1272,7 @@ h2 {
   float: left;
   border-radius: 5px;
   background: #333;
+  position: relative;
   overflow: hidden;
 }
 
@@ -1297,7 +1294,7 @@ h2 {
 }
 
 .grid__item--width2 {
-  width: 100%;
+  width: 300px;
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {

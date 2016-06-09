@@ -65,10 +65,12 @@
   border: $border-button-effect;
   border-radius: 19px;
   color: $color-main-effect;
+  background: $color-main-light;
   line-height: 36px;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+  behavior: url(border-radius.htc);
 
   @include tablet {
     width: 188px;
@@ -98,6 +100,7 @@
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+  behavior: url(border-radius.htc);
 
   @include tablet {
     display: inline-block;

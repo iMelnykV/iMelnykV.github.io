@@ -111,13 +111,13 @@
   &__item {
     position: absolute;
     width: 92px;
-
-    &:first-child {
-      left: 0;
-    }
-
-    &:last-child {
-      right: 0;
-    }
   }
+}
+
+.autorize__item--login {
+  left: 0;
+}
+
+.autorize__item--signup {
+  right: 0;
 }
