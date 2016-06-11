@@ -83,7 +83,11 @@ gulp.task('browserSync', function() {
   });
 });
 
-gulp.task('default', 'watch', ['browserSync', 'sass'], function() {
+// Задача по умолчанию, вызывается запуском `gulp`
+gulp.task('default', ['browserSync', 'sass', 'watch']);
+
+// Отслеживаем файлы, и по их изменению, запускаем задачу
+gulp.task('watch', ['browserSync', 'sass'], function() {
   gulp.watch('css/scss/**/*.scss', ['sass']);
   gulp.watch('**/*.html', browserSync.reload);
   gulp.watch('**/*.js', browserSync.reload);
