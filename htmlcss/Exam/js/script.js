@@ -1,3 +1,4 @@
+'use strict';
 docReady(function() {
 
 // carousels init
@@ -14,35 +15,42 @@ var flicks = [];
     pageDots: false,
   });
 
-  // carousel__arrow--left
-  item.children[0].children[0].addEventListener('click', function() {
-    flicks[i].next();
-  });
+  var nav = item.querySelectorAll('.carousel__nav');
 
-  // carousel__arrow--right
-  item.children[0].children[1].addEventListener('click', function() {
-    flicks[i].previous();
-  });
-});
-// ^ carousels init
+  if (item.addEventListener) {
+    nav[0].addEventListener('click', function() {
+      flicks[i].next();
+    });
+  } else {
+    nav[0].attachEvent("onclick", function() {
+      flicks[i].next();
+    });
+  }
 
-var dataImages = [],
-    amountOfImages = dataImages.length,
-    apiKey = '1983864-eea8becd8812584cf0ae486ec';
+  if (item.addEventListener) {
+    nav[1].addEventListener('click', function() {
+      flicks[i].previous();
+    });
+  } else {
+    nav[1].attachEvent("onclick", function() {
+      flicks[i].previous();
+    });
+  }
 
-var input = document.querySelectorAll('.search-block__input')[0];
-var button = document.querySelectorAll('.search-block__btn')[0];
-var searchBtnListener = button.addEventListener('click', searchPartner);
-var grid = document.querySelector('.grid');
-var iso;
-
-iso = new Isotope(grid, {
-  itemSelector: '.grid__item'
 });
 
-getImages();
+var grid    = document.querySelector('.grid'),
+    input   = document.querySelectorAll('.search-block__input')[0],
+    button  = document.querySelectorAll('.search-block__btn')[0],
+    searchBtnListener;
 
-function searchPartner(event) {
+if (button.addEventListener) {
+  searchBtnListener = button.addEventListener('click', searchHandler);
+} else {
+  searchBtnListener = button.attachEvent("onclick", searchHandler);
+}
+
+function searchHandler(event) {
   var value = input.value;
   if (value) {
     getImages(encodeURIComponent(value));
@@ -51,64 +59,106 @@ function searchPartner(event) {
 
 function getImages(query) {
   var xhr,
-    q = (query === undefined) ? '' : query,
-    orientation = 'all',
-    amount = 7,
-    url = 'https://pixabay.com/api/?key=' + apiKey +
-          '&q=' + q +
-          '&orientation=' + orientation +
-          '&per_page=' + amount +
-          '&image_type=photo&pretty=true';
+      q = (query === undefined) ? '' : query,
+      orientation = 'all',
+      amount = 7,
+      method;
 
-  getJSONP(url, responseHandler);
-}
-
-function responseHandler(data) {
-  // TODO check imgResponse for undefined
-  if (data.hits.length < 7) {
-    console.log('Not enough images');
+  if("onload" in new XMLHttpRequest()) {
+    xhr = new XMLHttpRequest();
+    method = 'https://'
+  } else {
+    xhr = new XDomainRequest();
+    method = 'http://'
   }
 
-  dataImages = data.hits.map(function(item) {
-    var orient;
+  var url = method +
+      'pixabay.com/api/?key=1983864-eea8becd8812584cf0ae486ec' +
+      '&q=' + q +
+      '&orientation=' + orientation +
+      '&per_page=' + amount +
+      '&image_type=photo&pretty=true';
 
-    if (item.webformatHeight > item.webformatWidth) {
-      orient = 'vertical';
-    } else if (item.webformatWidth / item.webformatHeight > 1.65) {
-      orient = 'horizontal';
-    } else {
-      orient = 'polaroid';
+  xhr.open('GET', url);
+  xhr.onload = function() {
+    var data;
+
+    try {
+      data = JSON.parse(xhr.responseText);
+    }
+    catch(e) {
+      emptyGrid();
+      grid.innerHTML = '<h2 class="content__title--partners">Server error</h2>';
+      grid.style.height = '50px';
+      return;
     }
 
-    return {
-      text: item.tags,
-      orientation: orient,
-      url: item.webformatURL
-    };
-  });
+    if (data.hits.length < 7) {
+      emptyGrid();
+      grid.innerHTML = '<h2 class="content__title--partners">Not found</h2>';
+      grid.style.height = '50px';
+      return;
+    }
 
-  updateGrid();
-}
+    emptyGrid();
+    // pick necessary data and render it
+    renderGrid(data.hits.map(prepareData));
 
-function updateGrid() {
-  var i, max, elem, grid;
+    initMasonry();
 
-  grid = document.querySelector('.grid');
-  elems = document.querySelectorAll('.grid__item');
-
-  if (grid.children.length) {
-    grid.innerHTML = '';
-    iso.remove(elems)
   }
 
-  sizer = document.createElement('div');
+  xhr.send();
+}
+
+/**
+ *
+ * Functions
+ *
+ */
+
+function initMasonry() {
+  var msnry = new Masonry(grid, {
+      columnWidth: '.grid__sizer',
+      itemSelector: '.grid__item',
+      percentPosition: true,
+      gutter: 0
+  });
+}
+
+// callback for map
+function prepareData(item) {
+  var orient;
+
+  if (item.webformatHeight > item.webformatWidth) {
+    orient = 'vertical';
+  } else if (item.webformatWidth / item.webformatHeight > 1.6) {
+    orient = 'horizontal';
+  } else {
+    orient = 'polaroid';
+  }
+
+  return {
+    text: item.tags,
+    orientation: orient,
+    url: item.webformatURL};
+}
+
+function emptyGrid() {
+  grid.innerHTML = '';
+}
+
+function renderGrid(dataImages) {
+  var elem;
+
+  var sizer = document.createElement('div');
   sizer.className = 'grid__sizer';
   grid.appendChild(sizer);
 
-  for (i = 0, max = dataImages.length; i < max; i++) {
+  for (var i = 0, max = dataImages.length; i < max; i++) {
     elem = document.createElement('div');
-    img = document.createElement('div');
-    text = document.createElement('span');
+    var img = document.createElement('div');
+    var text = document.createElement('span');
 
     switch (dataImages[i].orientation) {
       case 'vertical':
@@ -132,33 +182,10 @@ function updateGrid() {
     text.className = 'grid__title';
     elem.appendChild(text);
     grid.appendChild(elem);
-    iso.insert(elem);
   }
-};
-});
-// David Flanagan's JSONP function
-function getJSONP(url, callback) {
-    var cbnum = "cb" + getJSONP.counter++;
-    var cbname = "getJSONP." + cbnum;
-
-    if (url.indexOf("?") === -1)
-        url += "?callback=" + cbname;
-    else
-        url += "&callback=" + cbname;
-
-    var script = document.createElement("script");
-
-    getJSONP[cbnum] = function(response) {
-        try {
-            callback(response);
-        }
-        finally {
-            delete getJSONP[cbnum];
-            script.parentNode.removeChild(script);
-        }
-    };
-    script.src = url;
-    document.body.appendChild(script);
 }
 
-getJSONP.counter = 0;
+getImages();
+
+
+});

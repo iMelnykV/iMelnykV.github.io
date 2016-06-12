@@ -4,6 +4,7 @@
   @include clearfix;
   width: 320px;
   margin: 0 auto;
+  clear: both;
 
   @include tablet {
     width: 768px;
@@ -14,25 +15,25 @@
   }
 
   &__sizer {
-    width: 300px;
+    width: 320px;
 
     @include tablet {
-      width: 236px;
+      width: 256px;
     }
 
     @include desktop {
-      width: 300px;
+      width: 320px;
     }
   }
 
   &__item {
+    position: relative;
     min-width: 300px;
     height: 120px;
     margin: 10px 10px 0;
     float: left;
     border-radius: 5px;
     background: $color-main-dark;
-    position: relative;
     overflow: hidden;
 
     @include tablet {
@@ -78,10 +79,8 @@
     display: block;
     position: absolute;
     top: 50%;
-    left: 50%;
     width: 100%;
     margin: auto;
-    transform: translate(-50%, -50%);
     color: $color-main-light;
     text-align: center;
 
