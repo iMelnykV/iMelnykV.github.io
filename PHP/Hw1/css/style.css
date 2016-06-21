@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.page-header {
+  height: 120px;
+  background: #494949;
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.page-header p {
+  margin-left: 50px;
+}
+
+span {
+  margin-left: 10px;
+}
+
+span:hover {
+  color: #60b5ed;
+}
+
+main {
+ position: relative;
+ overflow: hidden;
+}
+
+h2 {
+  margin-bottom: 17px;
+  text-align: center;
+  color: #60b5ed;
+}
+
+.about-me,
+.education,
+.experience {
+  float: left;
+  width: 29%;
+  margin: 20px 2%;
+  height: 180px;
+  background: green;
+  color: white;
+  border: 2px solid black;
+  box-sizing: border-box;
+  transition: background-color 1s linear 0.5s;
+}
+
+.about-me:hover,
+.education:hover,
+.experience:hover {
+  background: yellow;
+  color: black;
+  border: 2px solid rgba(104,155,204,0.8);
+  box-shadow: 1px 1px 14px 2px rgba(104,155,204,1);
+}
+
+
+.about-me,
+.education,
+.experience p {
+  padding-left: 10px;
+}
+
+@media (max-width: 1024px) {
+  .about-me,
+  .education,
+  .experience {
+    width: 46%;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-me,
+  .education,
+  .experience {
+    width: 96%;
+  }
+}
+
+.page-footer {
+  margin-top: 50px;
+  clear: both;
+  height: 20px;
+  background: #60b5ed;
+  color: #fff;
+  text-align: center;
+  line-height: 20px;
+}
