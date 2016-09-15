@@ -10,7 +10,15 @@ h1 {
   color: #333; }
 
 .menu {
-  display: block; }
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  display: block;
+  border: 2px solid black;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px; }
   .menu li {
     float: left;
     list-style: none;
