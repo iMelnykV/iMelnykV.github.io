@@ -3,6 +3,15 @@
 @import "mixins";
 
 
+.wrapper {
+  margin: 0 auto;
+  min-width: 320px;
+  background: url(../img/main_bg.png) top center no-repeat;
+  background-size: cover;
+}
+
+/* HEADER */
+
 body {
   font: 100% $font-stack;
   color: $primary-color;
