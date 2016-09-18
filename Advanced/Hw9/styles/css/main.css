@@ -5,8 +5,36 @@
 .wrapper {
   margin: 0 auto;
   min-width: 320px;
-  background: url(../../img/bmw.jpg) top center no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  background: #ff6a3a;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #ff6a3a 0%, #000000 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ff6a3a 0%, #000000 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ff6a3a 0%, #000000 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */ }
+
+/* HEADER */
+.pageLogin {
+  background: url(../../img/main_bg.png) top center no-repeat; }
+
+.logo {
+  margin: 0 auto;
+  display: block;
+  width: 224px;
+  padding-top: 258px; }
+
+.logo__image {
+  display: block; }
+
+input {
+  width: 300px;
+  font-size: 13px;
+  padding: 6px 0 4px 10px;
+  border: 1px solid #cecece;
+  background: #F6F6f6;
+  border-radius: 48px; }
 
 .wrapper {
   max-width: 750px; }
