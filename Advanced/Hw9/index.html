@@ -9,22 +9,24 @@
 
     <div class="wrapper">
       <div class="pageLogin">
-        
+
         <header class="header">
           <h1 class="logo"><a href="#"><img class="logo__image" src="img/logo.png" alt="" /></a></h1>
         </header>
 
         <section class="registry">
           <form action="#" name="MyForm">
-            <p>
-              <input type="text" placeholder="Username" required="">
-            </p>
-            <p>
-              <input type="password" placeholder="Password" required="">
-            </p>
-            <p>
-              <input type="submit" value="Get Started">
-            </p>
+            <div>
+              <a href="#"><img src="img/username.png" alt="Изображение логин"></a>
+              <input type="text" required placeholder="Username">
+            </div>
+            <div>
+              <a href="#"><img class="registry__pass" src="img/password.png" alt="Замочек"></a>
+              <input type="password" required placeholder="Password">
+            </div>
+            <div class="registry__box">
+              <input class="registry__button" type="submit" value="Get Started">
+            </div>
           </form>
         </section>
 

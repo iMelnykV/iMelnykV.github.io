@@ -2,10 +2,21 @@
 @import "variables";
 @import "mixins";
 
+@font-face {
+    font-family: 'Montserrat Regular';
+    src: url('../../fonts/montserrat-regular-webfont.eot');
+    src: url('../../fonts/montserrat-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/montserrat-regular-webfont.woff2') format('woff2'),
+         url('../../fonts/montserrat-regular-webfont.woff') format('woff'),
+         url('../../fonts/montserrat-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 .wrapper {
+  width: 2800px;
+  height: 2120px;
   margin: 0 auto;
-  min-width: 320px;
   background-size: cover;
   background: #ff6a3a; /* Old browsers */
   background: -moz-linear-gradient(top,  #ff6a3a 0%, #000000 100%); /* FF3.6-15 */
@@ -16,57 +27,129 @@
 /* HEADER */
 
 .pageLogin {
-  background: url(../../img/main_bg.png) top center no-repeat;
+  background: url(../../img/main_bgDesktop.png) top center no-repeat;
 }
 
 .logo {
-  margin: 0 auto;
-  display: block;
   width: 224px;
-  padding-top: 258px;
+  margin: 0 auto;
+  padding: 537px 0 207px;
+  display: block;
 }
 
 .logo__image {
   display: block;
 }
 
-input {
-	width: 300px;
-	font-size: 13px;
-	padding: 6px 0 4px 10px;
-	border: 1px solid #cecece;
-	background: #F6F6f6;
-	border-radius: 48px;
+.registry__user {
+  background: $orange-color;
 }
 
-.wrapper {
-  max-width: 750px;
-}
-
-
-body {
-  font: 100% $font-stack;
-  color: $primary-color;
-}
-
-h1 {
-  color: $primary-color;
-}
-
-.menu {
-  position: relative;
-  overflow: hidden;
-  padding: 20px;
-  display: block;
-  border: 2px solid black;
-  @include border-radius(20px);
-
-  li {
-    float: left;
-    list-style: none;
-    padding: 20px;
+form {
+  div {
+    position: relative;
+    width: 650px;
+    height: 110px;
+    margin: 0 auto 40px;
+    background: rgba(255, 255, 255, 0.1);
+    @include border-radius(55px);
   }
+  img {
+    float: left;
+    margin: 33px 34px 33px 43px;
+  }
+  .registry__pass {
+    margin: 26px 37px 32px 45px;
+  }
+  input {
+    position: absolute;
+    width: 200px;
+    height: 26px;
+    margin-top: 44px;
+    font-family: $font-stack;
+    font-size: 26px;
+    color: $white;
+    background: transparent;
+    border: none;
+    outline: none;
+  }
+  input::-webkit-input-placeholder {
+    color: $white;
+  }
+  .registry__box {
+    margin-top: 80px;
+  }
+  .registry__button {
+    width: 650px;
+    height: 110px;
+    margin: 0;
+    font-size: 26px;
+    background: rgba(249, 99, 50, 1);
+    @include border-radius(55px);
+    cursor: pointer;
+  }
+}
+
+/* FOOTER */
+footer {
+  width: 649px;
+  margin: 63px auto 0;
+  padding-bottom: 601px;
   a {
-    color: $green;
+    font-family: $font-stack;
+    font-size: 21px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: $grey;
+  }
+  a:last-child {
+    float: right;
+  }
+}
+
+@media (max-width: 1536px) {
+  .wrapper {
+    width: 1536px;
+    height: 2048px;
+  }
+  .pageLogin {
+    background: url(../../img/main_bgTablet.png) top center no-repeat;
+  }
+  .logo {
+    padding: 458px 0 207px;
+  }
+  form {
+    div {
+      margin: 0 auto 30px;
+    }
+  }
+  footer {
+    margin: 52px auto 0;
+    padding-bottom: 629px;
+  }
+}
+
+@media (max-width: 750px) {
+  .wrapper {
+    width: 750px;
+    height: 1334px;
+  }
+  .pageLogin {
+    background: url(../../img/main_bgMobile.png) top center no-repeat;
+  }
+  .logo {
+    padding: 258px 0 315px;
+  }
+  form {
+    div {
+      margin: 0 auto 30px;
+    }
+    .registry__box {
+      margin-top: 0;
+    }
+  }
+  footer {
+    margin: 50px auto 0;
+    padding-bottom: 58px;
   }
 }
