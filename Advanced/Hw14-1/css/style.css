@@ -1,0 +1,65 @@
+body {
+  background-color: #eeeeee;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../fonts/helveticaneue-thin-webfont.eot');
+  src: url('../fonts/helveticaneue-thin-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/helveticaneue-thin-webfont.woff2') format('woff2'),
+       url('../fonts/helveticaneue-thin-webfont.woff') format('woff'),
+       url('../fonts/helveticaneue-thin-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('../fonts/helveticaneue-heavy-webfont.eot');
+  src: url('../fonts/helveticaneue-heavy-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/helveticaneue-heavy-webfont.woff2') format('woff2'),
+       url('../fonts/helveticaneue-heavy-webfont.woff') format('woff'),
+       url('../fonts/helveticaneue-heavy-webfont.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+.container {
+	margin: 20% auto;
+	display: block;
+	text-align: center;
+  font-family: "Helvetica Neue", Arial, Tahoma;
+}
+
+/*TIMER*/
+.Clock {
+  font-size: 40px;
+  color: orange;
+  position: absolute;
+}
+
+/*BUTTON*/
+.timerButton {
+	width: 20%;
+	height: 30px;
+  margin: 60px 0 0 670px;
+  padding-top: 10px;
+	font-size: 20px;
+  border-radius: 50px;
+  float: left;
+  background: grey;
+}
+
+.timerButton:hover {
+  cursor: pointer;
+  background: green;
+  color: white;
+}
+
+.otherBtn {
+  margin-left: 40px;
+}
+
+.otherBtn:hover {
+  background: red;
+}
